@@ -47,7 +47,8 @@ public class Game {
     public void play (Gambler player) {
         int amount = ConsoleReader.promptRange("How much do you want to bet",
                                                0, player.getBankroll());
-        Bet b = promptForBet();
+        BetFactory myBetFactory = new BetFactory();
+        Bet b = myBetFactory.promptForBet();
         b.place();
 
         System.out.print("Spinning ...");
